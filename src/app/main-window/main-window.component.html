@@ -1,3 +1,54 @@
-<p>
-  main-window works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Login</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <label for="userNameInput">Username</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <input #userNameInput type="text" (keyup)="textInput(userNameInput.value)">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <label for="passwordInput">Password</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <input #passwordInput type="password" (keyup)="textInput(passwordInput.value)">
+    </div>
+  </div>
+
+<div class="row">
+  <div class="col-xs-12">
+<button *ngIf="passFlag==false" class="btn btn-primary" 
+ (click)="checkUserNameAndPassword(userNameInput.value,passwordInput.value)">
+ Login</button>
+  </div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+<div class="alert alert-success" *ngIf="passFlag==true && showAlert">
+  <strong>Login Success!</strong> Indicates a successful or positive action.
+</div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-12">
+<div class="alert alert-danger  " *ngIf="passFlag==false && showAlert"  >
+  <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
+</div>
+  </div>
+</div>
+

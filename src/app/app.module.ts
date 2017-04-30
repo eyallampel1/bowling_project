@@ -6,16 +6,21 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MainWindowComponent } from './main-window/main-window.component';
+import { Page2Component } from './main-window/page2/page2.component';
+
+
 
 
 const appRoutes: Routes = [
-  { path: '', component: MainWindowComponent }
+  { path: '', component: MainWindowComponent },
+  {path: 'page2', component: Page2Component}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainWindowComponent
+    MainWindowComponent,
+    Page2Component,
   ],
   imports: [
     BrowserModule,
