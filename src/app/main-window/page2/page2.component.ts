@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./page2.component.css']
 })
 export class Page2Component implements OnInit {
-
+showLoginComponent=false;
   constructor() { }
 
   ngOnInit() {
   }
+
+public checkIfClicked(): void {
+console.debug("click maneger");
+this.showLoginComponent=true;
+}
 
 }

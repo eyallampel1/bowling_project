@@ -1,13 +1,22 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default ">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" routerLink="/page2">WebSiteName</a>
+    <div class="navbar-header navbar-right">
+      <a class="navbar-brand navbar-right" routerLink="/">באולינג אשדוד</a>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a routerLink="/page2">Home</a></li>
-      <li><a routerLink="/page2">Page 1</a></li>
-      <li><a routerLink="/page2">Page 2</a></li>
-      <li><a routerLink="/page2">Page 3</a></li>
+    <ul class="nav navbar-nav navbar-right">
+      <li (click)="checkIfClicked()"><a routerLink="/">כניסת מנהל</a></li>
+      <li><a routerLink="/">תוכנית משחקים</a></li>
+      <li><a routerLink="/">שיא קבוצתי - שלישייה</a></li>
+      <li><a routerLink="/">שיא קבוצתי - משחק בודד</a></li>
+      <li><a routerLink="/">שיאיים אישיים - שלישייה</a></li>
+      <li><a routerLink="/">שיאיים אישיים - משחק בודד</a></li>
+      <li><a routerLink="/">נבחרת השבוע</a></li>
+      <li><a routerLink="/">מיקום קבוצות</a></li>
+      <li class="active"><a routerLink="/">תוצאות אישיות</a></li>
+    
+    
     </ul>
   </div>
 </nav>
+
+<app-main-window *ngIf="showLoginComponent"></app-main-window>
