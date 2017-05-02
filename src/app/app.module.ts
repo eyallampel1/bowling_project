@@ -6,14 +6,14 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { MainWindowComponent } from './main-window/main-window.component';
-import { Page2Component } from './main-window/page2/page2.component';
-
-
-
+import { loginComponent } from './main-window/login/login.component';
+import { ManagerComponentComponent } from './main-window/login/manager-component/manager-component.component';
+import {AngularFireModule} from 'angularfire2';
+import {firebaseConfig} from './../environments/firebase.config';
 
 
 const appRoutes: Routes = [
-  { path: 'page2', component: Page2Component },
+  { path: 'login', component: loginComponent },
   {path: '', component: MainWindowComponent}
 ];
 
@@ -21,12 +21,14 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     MainWindowComponent,
-    Page2Component,
+    loginComponent,
+    ManagerComponentComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

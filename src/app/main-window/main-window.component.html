@@ -6,21 +6,39 @@
     <ul class="nav navbar-nav navbar-right">
       <li (click)="checkIfClicked()"><a routerLink="/">כניסת מנהל</a></li>
       <li><a routerLink="/">תוכנית משחקים</a></li>
-      <li><a routerLink="/">שיא קבוצתי - שלישייה</a></li>
-      <li><a routerLink="/">שיא קבוצתי - משחק בודד</a></li>
-      <li><a routerLink="/">שיאיים אישיים - שלישייה</a></li>
-      <li><a routerLink="/">שיאיים אישיים - משחק בודד</a></li>
+
+      <li *ngIf="!clickDropDownFlag" (click)="clickDropDownFlag=!clickDropDownFlag" class="dropdown ">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" >שיאים
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a >שיא אישי - משחק בודד</a></li>
+          <li><a >שיא אישי - שלישיית משחקים</a></li>
+          <li><a >שיא קבוצתי - משחק בודד</a></li>
+          <li><a >שיא קבוצתי - שלישיית משחקים</a></li>
+        </ul>
+      </li>
+
+      <li *ngIf="clickDropDownFlag" (click)="clickDropDownFlag=!clickDropDownFlag" class="dropdown open">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" >שיאים
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a >שיא אישי - משחק בודד</a></li>
+          <li><a >שיא אישי - שלישיית משחקים</a></li>
+          <li><a >שיא קבוצתי - משחק בודד</a></li>
+          <li><a >שיא קבוצתי - שלישיית משחקים</a></li>
+        </ul>
+      </li>
       <li><a routerLink="/">נבחרת השבוע</a></li>
       <li><a routerLink="/">מיקום קבוצות</a></li>
       <li class="active"><a routerLink="/">תוצאות אישיות</a></li>
+
+
 
 
     </ul>
   </div>
 </nav>
 
-<app-page2 *ngIf="showLoginComponent"></app-page2>
-
-<b (loginSucsess)="showOrNot($event)">show</b>
-<div></div>
-{{debug}}
+<app-login (loginSucsess)="showManegerdisbleLogin($event)" *ngIf="showLoginComponent"></app-login>
+<app-manager-component *ngIf=showManeger></app-manager-component>
+<app-manager-component></app-manager-component><!--//delete this for debug!!!-->

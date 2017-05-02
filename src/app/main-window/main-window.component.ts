@@ -9,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainWindowComponent implements OnInit {
 showLoginComponent=false;
-debug=false;
+showManeger=false;
+  clickDropDownFlag=false;
   constructor() { }
 
   ngOnInit() {
@@ -20,9 +21,11 @@ console.debug("click maneger");
 this.showLoginComponent=true;
 }
 
-public showOrNot(e):void {
-    console.debug("enter Event Parent Function")
-    this.debug=e;
+public showManegerdisbleLogin(event:boolean):void {
+    console.log("Event emitted from child to Parent Function");
+    this.showManeger=event;
+    this.showLoginComponent=false;
+
 }
 
 }

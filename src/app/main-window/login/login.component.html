@@ -52,3 +52,9 @@
   </div>
 </div>
 
+<hr>
+<ul>
+  <li *ngFor="let item of items | async">
+    {{item.$value}}
+  </li>
+</ul>
