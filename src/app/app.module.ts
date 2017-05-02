@@ -7,14 +7,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { MainWindowComponent } from './main-window/main-window.component';
 import { Page2Component } from './main-window/page2/page2.component';
-import { ManagerAppComponent } from './manager-app/manager-app.component';
+
 
 
 
 
 const appRoutes: Routes = [
-  { path: '', component: Page2Component },
-  {path: 'page2', component: MainWindowComponent}
+  { path: 'page2', component: Page2Component },
+  {path: '', component: MainWindowComponent}
 ];
 
 @NgModule({
@@ -22,7 +22,6 @@ const appRoutes: Routes = [
     AppComponent,
     MainWindowComponent,
     Page2Component,
-    ManagerAppComponent,
   ],
   imports: [
     BrowserModule,

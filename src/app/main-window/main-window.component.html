@@ -1,54 +1,26 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-12">
-      <h2>Login</h2>
+<nav class="navbar navbar-default ">
+  <div class="container-fluid">
+    <div class="navbar-header navbar-right">
+      <a class="navbar-brand navbar-right" routerLink="/">באולינג אשדוד</a>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <label for="userNameInput">Username</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <input #userNameInput type="text" (keyup)="textInput(userNameInput.value)">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12">
-      <label for="passwordInput">Password</label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <input #passwordInput type="password" (keyup)="textInput(passwordInput.value)">
-    </div>
-  </div>
-
-<div class="row">
-  <div class="col-xs-12">
-<button *ngIf="passFlag==false" class="btn btn-primary" 
- (click)="checkUserNameAndPassword(userNameInput.value,passwordInput.value)">
- Login</button>
-  </div>
-</div>
-</div>
-
-<div class="row">
-  <div class="col-xs-12">
-<div class="alert alert-success" *ngIf="passFlag==true && showAlert">
-  <strong>Login Success!</strong> Indicates a successful or positive action.
-</div>
-  </div>
-</div>
+    <ul class="nav navbar-nav navbar-right">
+      <li (click)="checkIfClicked()"><a routerLink="/">כניסת מנהל</a></li>
+      <li><a routerLink="/">תוכנית משחקים</a></li>
+      <li><a routerLink="/">שיא קבוצתי - שלישייה</a></li>
+      <li><a routerLink="/">שיא קבוצתי - משחק בודד</a></li>
+      <li><a routerLink="/">שיאיים אישיים - שלישייה</a></li>
+      <li><a routerLink="/">שיאיים אישיים - משחק בודד</a></li>
+      <li><a routerLink="/">נבחרת השבוע</a></li>
+      <li><a routerLink="/">מיקום קבוצות</a></li>
+      <li class="active"><a routerLink="/">תוצאות אישיות</a></li>
 
 
-<div class="row">
-  <div class="col-xs-12">
-<div class="alert alert-danger  " *ngIf="passFlag==false && showAlert"  >
-  <strong>Danger!</strong> Indicates a dangerous or potentially negative action.
-</div>
+    </ul>
   </div>
-</div>
+</nav>
 
+<app-page2 *ngIf="showLoginComponent"></app-page2>
+
+<b (loginSucsess)="showOrNot($event)">show</b>
+<div></div>
+{{debug}}
