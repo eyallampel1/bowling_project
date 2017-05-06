@@ -1,0 +1,91 @@
+<div class="row">
+  <div class="col-xs-1">
+    <h2>ממוצע</h2>
+  </div>
+  <div class="col-xs-1">
+    <h2>האנדיקאפ</h2>
+  </div>
+  <div class="col-xs-1">
+    <h2>משחק 3</h2>
+  </div>
+  <div class="col-xs-1">
+    <h2>משחק 2</h2>
+  </div>
+  <div class="col-xs-1">
+    <h2>משחק 1</h2>
+  </div>
+  <div class="col-xs-2">
+    <h2>שם השחקן</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-1">
+    <input id="player1AVG" type="text" class="form-control">
+  </div>
+  <div class="col-xs-1">
+    <input id="player1Handicap" type="text" class="form-control">
+  </div>
+  <div class="col-xs-1">
+    <input id="player1Game3" #player1Game3 type="text" class="form-control"  (keyup)="setGame3Player1(player1Game3.value)">
+  </div>
+  <div class="col-xs-1">
+    <input id="player1Game2" #player1Game2 type="text" class="form-control" (keyup)="setGame2Player1(player1Game2.value)">
+  </div>
+  <div class="col-xs-1">
+    <input id="player1Game1" #player1Game1  type="text" class="form-control" (keyup)="setGame1Player1(player1Game1.value)">
+  </div>
+  <div class="col-xs-2">
+    <input id="player1NameInput" type="text" class="form-control" [(ngModel)]="player1Name">
+  </div>
+</div>
+<p></p>
+
+<div class="row">
+  <div class="col-xs-1">
+    <input id="player2AVG" type="text" class="form-control">
+  </div>
+  <div class="col-xs-1">
+    <input id="player2Handicap" type="text" class="form-control">
+  </div>
+  <div class="col-xs-1">
+    <input #player2Game3 id="player2Game3" type="text" class="form-control" (keyup)="setGame3Player2(player2Game3.value)" >
+  </div>
+  <div class="col-xs-1">
+    <input #player2Game2 id="player2Game2" type="text" class="form-control" (keyup)="setGame2Player2(player2Game2.value)">
+  </div>
+  <div class="col-xs-1">
+    <input #player2Game1 id="player2Game1"  type="text" class="form-control" (keyup)="setGame1Player2(player2Game1.value)" >
+  </div>
+  <div class="col-xs-2">
+    <input id="player2NameInput" type="text" class="form-control" [(ngModel)]="player2Name">
+  </div>
+</div>
+
+<p></p>
+
+<div class="row">
+  <div class="col-xs-1">
+    <input id="player3AVG" type="text" class="form-control">
+  </div>
+  <div class="col-xs-1">
+    <input id="player3Handicap" type="text" class="form-control">
+  </div>
+  <div class="col-xs-1">
+    <input #player3Game3 id="player3Game3" type="text" class="form-control" (keyup)="setGame3Player3(player3Game3.value)">
+  </div>
+  <div class="col-xs-1">
+    <input #player3Game2 id="player3Game2" type="text" class="form-control" (keyup)="setGame2Player3(player3Game2.value)">
+  </div>
+  <div class="col-xs-1">
+    <input #player3Game1 id="player3Game1"  type="text" class="form-control" (keyup)="setGame1Player3(player3Game1.value)">
+  </div>
+  <div class="col-xs-2">
+    <input id="player3NameInput" type="text" class="form-control" [(ngModel)]="player3Name">
+  </div>
+</div>
+
+<div class="row">
+  <p>{{warningLabel}}</p>
+</div>
+
