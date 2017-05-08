@@ -10,6 +10,7 @@ import { loginComponent } from './main-window/login/login.component';
 import { ManagerComponentComponent } from './main-window/login/manager-component/manager-component.component';
 import {AngularFireModule} from 'angularfire2';
 import {firebaseConfig} from './../environments/firebase.config';
+import { PlayersNamesComponent } from './main-window/login/players-names/players-names.component';
 
 
 const appRoutes: Routes = [
@@ -23,6 +24,8 @@ const appRoutes: Routes = [
     MainWindowComponent,
     loginComponent,
     ManagerComponentComponent,
+    PlayersNamesComponent
+    
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,68 @@
+<hr>
+<div class="row">
+  <div class="col-xs-5">
+    
+  </div>
+  <div class="col-xs-5">
+    <input type="text" #nameInput class="form-control">
+  </div>
+</div>
+<div class="row">
+    <div class="col-xs-5">
+    
+  </div>
+
+  <div class="col-xs-4">
+<button class="btn btn-primary" (click)="addPlayer(nameInput.value)" >הוסף שחקן</button>
+  </div>
+</div>
+<!--<li *ngFor="let name of playersNames">{{name}}</li>-->
+
+<div class="row">
+  <div class="col-xs-6">
+    <b>שם השחקן</b>
+  </div>
+</div>
+
+<!--save this 07.05.17-->
+<!--<div class="row">
+  <div class="col-xs-6">
+<li [ngClass]="'liWasClicked'" *ngFor="let player of Players" (mouseover)="log()">שם השחקן :{{player.playerName}}</li>
+  </div>-->
+
+ <div class="row">
+  <div class="col-xs-6">
+<li contenteditable="true"  [ngClass]="'liWasClicked'" *ngFor="let team of teams| async" (mouseover)="log()" (keyup.enter)="log()">{{team.PlayerName}}</li>
+  </div>
+
+<div class="col-xs-6">
+<b [ngClass]="'spaceAtStart'">מספר קבוצה</b>
+</div>
+
+  <div class="col-xs-6">
+    <li contenteditable="true" *ngFor="let team of teams| async">קבוצה מספר:{{team.TeamNumber}}</li>
+  </div>
+</div>
+
+
+<div [ngClass]="'spaceAtStart'" class="row">
+  
+
+  <table>
+
+<tr *ngFor="let team of teams| async">
+  <div class="col-xs-6">
+  <td contenteditable='true' >{{ team.PlayerName }}</td>
+   </div>
+    <div class="col-xs-6">
+  <td contenteditable='true'>{{ team.TeamNumber }}</td>
+  </div>
+</tr>
+</table>
+ 
+
+
+</div>
+
+
+
